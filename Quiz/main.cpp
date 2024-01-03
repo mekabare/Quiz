@@ -4,13 +4,16 @@
 #include "player.h"
 #include "continue.h"
 #include "newGame.h"
+#include "menu.h"
 
 //Player 1
 Player player;
 
 int main() {
 
-
+	char input; // input buffer for menu control
+	Difficulty difficulty; // difficulty picked by user
+	printMenu(input, 50);
 
 //Menu
 

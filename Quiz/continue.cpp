@@ -7,4 +7,4 @@ void continueGame(Player& player, Difficulty difficulty) {
     // pick by number
     // ask difficulty (if not unlocked, cant pick) (e, n, h)
     // assign to player.difficulty
-}
+};

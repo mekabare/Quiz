@@ -1,0 +1,7 @@
+           NEW GAME
+           CONTINUE
+	 Leader board
+          HOW TO PLAY
+             EXIT
+
+Use w, a, s, d for directions...

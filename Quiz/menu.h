@@ -1,21 +1,17 @@
-#ifndef MENU_H
-#define MENU_H
+#pragma once
+#include <string>
+using namespace std;
 
 /// <summary>
 /// 
 /// </summary>
-/// <returns></returns>
+/// <returns>bool if it worked</returns>
 bool printTitle();
 
-using namespace std;
 /// <summary>
 /// Prints menu, if fails, returns 0 and ends main
 /// </summary>
 /// <param name=1> local user input for menu
-int printMenu(char&,int width);
-
-void arrowMenu();
+string printMenu(char&,int width);
 
 int getUserChoice();
-
-#endif // MENU_H

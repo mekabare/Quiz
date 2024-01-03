@@ -6,18 +6,19 @@
 using namespace std;
 
 enum Difficulty {
-    EASY,
-    NORMAL,
-    HARD
+    EASY = 'e',
+    NORMAL = 'n',
+    HARD = 'h'
 };
 
 struct Player {
     string name;
     Difficulty unlockedDifficulty;
+    string score //money won in said difficulty
 
     void readFromFile();
     void writeToFile();
 
-}
+};
 
 #endif // PLAYER_H

@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="continue.cpp" />
-    <ClCompile Include="createQuestionsFile.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
@@ -30,6 +29,7 @@
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="arrowmenu.h" />
     <ClInclude Include="continue.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="main.h" />

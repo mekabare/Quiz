@@ -21,14 +21,9 @@ using namespace std;
                 getline(file, q.answer3);
                 getline(file, q.answer4);
 
-                int difficulty; //container
-                file >> difficulty; //put difficulty into container
-                q.difficulty = static_cast<Difficulty>(difficulty); //convert to Difficulty, assign to q
                 file >> q.tier; //assign tier data to q
                 allQuestions.push_back(q); //put everything into the vector array
                 file.ignore(); // Ignore newline
-
-                
             }
 
             file.close();
@@ -51,9 +46,11 @@ using namespace std;
      return filteredQuestions;
  }
 
- void displayQuestion(const vector <Question> tieredQuestions, Question q) {
+ void displayQuestion(int position, const vector <Question> tieredQuestions, Question q){
 
-     q = tieredQuestions[0];
+     q = tieredQuestions[position];
+     position++; // moves on to the next question with each call
+
      // Create a vector to hold the shuffled answers
      vector<string> shuffledAnswers = { q.answer1, q.answer2, q.answer3, q.answer4 };
      shuffleAnswers(q);  // Shuffle the answers

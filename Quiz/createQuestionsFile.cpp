@@ -12,20 +12,18 @@ void createQuestionsFile() {
     string filename;
     cout << "Creating for difficulty (easy, normal, hard): ";
     cin >> filename;
-    std::ofstream file(filename+"_questions.txt", std::ios::out | std::ios::app);
+    std::ofstream file;
 
-    if (file.is_open()) {
         int numQuestions;
         cout << "Enter the number of questions: ";
         std::cin >> numQuestions;
-        int difficulty;
-        std::cout << "Enter difficulty once more (0 for easy, 1 for normal, 2 for hard): ";
-        std::cin >> difficulty;
         std::cin.ignore();  // Consume the newline character
 
-        for (int i = 1; i <= numQuestions; ++i) {
-            Question q;
+        for (int i = 1; i <= numQuestions; i++){
+            file.open(filename + "_questions.txt", std::ios::out | std::ios::app);
 
+        if (file.is_open()) {
+            Question q;
             system("CLS");
 
             std::cout << "Enter question " << i << ": ";
@@ -43,8 +41,6 @@ void createQuestionsFile() {
             std::cout << "Enter answer 4: ";
             std::getline(std::cin, q.answer4);
 
-            q.difficulty >> static_cast <Difficulty>(difficulty);
-
             std::cout << "Enter tier (1, 2, 3, 4, 5): ";
             std::cin >> q.tier;
 
@@ -53,17 +49,15 @@ void createQuestionsFile() {
             file << q.answer2 << "\n";
             file << q.answer3 << "\n";
             file << q.answer4 << "\n";
-            file << q.difficulty << "\n";
             file << q.tier << "\n";
-
+            file.close();
         }
+        else {
+            std::cout << "Unable to create questions.txt" << std::endl;
+        }
+        std::cout << filename << "questions.txt created successfully." << std::endl;
+    }
 
-        file.close();
-        std::cout << "questions.txt created successfully." << std::endl;
-    }
-    else {
-        std::cout << "Unable to create questions.txt" << std::endl;
-    }
 }
 
 int main() {

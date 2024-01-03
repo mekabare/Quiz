@@ -4,20 +4,13 @@
 #include <string>
 #include <vector>
 using namespace std;
-
-enum Difficulty {
-    EASY=0,
-    NORMAL=1,
-    HARD=2
-};
-
+ 
 struct Question {
     string questionText;
     string answer1; //right answer
     string answer2;
     string answer3;
     string answer4;
-    Difficulty difficulty;
     int tier;
 
     /// <summary>
